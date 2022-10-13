@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Topic = ({topic, handleAddToQuiz}) => {
-  const {name, logo, total} = topic;
+const Topic = ({topic}) => {
+  const {id,name, logo, total} = topic;
   return (
     <div className='bg-gray-100 p-6 rounded shadow-lg'>
     <img
@@ -11,13 +12,15 @@ const Topic = ({topic, handleAddToQuiz}) => {
     />
     <p className='mb-2 text-xl font-bold leading-none sm:text-2xl'>{name}</p>
     <p className='text-gray-700 '>Questions: {total}</p>
+    <Link to={`/quiz/${id}`}>
     <button
-    onClick={handleAddToQuiz}
+    
       type='button'
       className='px-8 block w-full mt-4 py-3 font-semibold rounded-full bg-cyan-200 text-gray-800 hover:bg-cyan-400'
     >
       Start Quiz
     </button>
+    </Link>
   </div>
   );
 };
