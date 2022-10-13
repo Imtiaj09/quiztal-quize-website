@@ -8,7 +8,8 @@ const QuizTestPage = () => {
   const {questions} = quiz.data;
   let qNumber= 0;
   return (
-    <div>
+    <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 border rounded-lg bg-gray-100 shadow-md'>
+      <h2 className='text-2xl font-bold'>❏ React & JS & Git MCQ</h2>
       {
         questions.map((question) =>  {
           qNumber=qNumber + 1;

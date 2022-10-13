@@ -13,19 +13,24 @@ const Question = ({questionData, qNumber}) => {
       alert('Wrong')
     }
   }
+  let qOption = 0;
   return (
-    <div>
+    <div className='py-8 border rounded-lg'>
       <h4>Question {qNumber}- {question}</h4>
       {
-        options.map((option)=> <Option
+        options.map((option)=> {
+         qOption = qOption +1;
+        return <Option
         key={option.id}
         option={option}
+        qOption={qOption}
         handleToCheck={handleToCheck}
-        ></Option>)
+        ></Option>
+        })
       }
-      <button onClick={()=>handleToShowAnswer()}>Show ans</button>
+      <button className='bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white border border-blue-500 hover:border-transparent rounded' onClick={()=>handleToShowAnswer()}>Check Answer</button>
     </div>
   );
 };
 
-export default Question;<h4>question 1</h4>
+export default Question;
